@@ -1,10 +1,11 @@
 package controller;
 
+import ijse.dep7.CryptingAlgorithm;
 import javafx.event.ActionEvent;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.TextField;
-import util.Crypt;
+
 
 public class EncryptionFormController {
     public TextField txtText;
@@ -35,6 +36,6 @@ public class EncryptionFormController {
          * Corresponding to index, char values of codes assigned to cipherChar, cipherText is formulated accordingly
          * returns new String cipherText
          */
-        txtCipherText.setText(Crypt.encrypt(text,key));
+        txtCipherText.setText(CryptingAlgorithm.encrypt(text,key));
     }
 }

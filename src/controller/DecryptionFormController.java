@@ -1,10 +1,11 @@
 package controller;
 
+import ijse.dep7.CryptingAlgorithm;
 import javafx.event.ActionEvent;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.TextField;
-import util.Crypt;
+
 
 public class DecryptionFormController {
     public TextField txtCipherText;
@@ -35,6 +36,6 @@ public class DecryptionFormController {
          * String text becomes the subString from the index=0 to index = (length of text - length of key - length of "cinnamon")
          * returns new String text
          */
-        txtText.setText(Crypt.decrypt(cipherText,key));
+        txtText.setText(CryptingAlgorithm.decrypt(cipherText,key));
     }
 }
