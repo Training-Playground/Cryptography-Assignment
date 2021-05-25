@@ -4,11 +4,15 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.layout.AnchorPane;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
 
 import java.io.IOException;
 
 public class MainFormController {
+    public AnchorPane main;
+
     public void btnOpenEncryptionForm_OnAction(ActionEvent actionEvent) throws IOException {
         setUI("/view/EncryptionForm.fxml","Encryption");
     }
@@ -25,6 +29,8 @@ public class MainFormController {
         stage.setTitle(title);
         stage.centerOnScreen();
         stage.setResizable(false);
+        stage.initOwner(this.main.getScene().getWindow());
+        stage.initModality(Modality.WINDOW_MODAL);
         stage.show();
 
     }
