@@ -18,10 +18,12 @@ public class DecryptionFormController {
 
         if(cipherText.trim().isEmpty()){
             new Alert(Alert.AlertType.ERROR,"Please input a valid Cipher Text", ButtonType.OK).show();
+            txtCipherText.requestFocus();
             return;
         }
         if(key.trim().isEmpty()) {
             new Alert(Alert.AlertType.ERROR, "Please input a valid Key", ButtonType.OK).show();
+            txtKey.requestFocus();
             return;
         }
 

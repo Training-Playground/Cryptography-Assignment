@@ -18,10 +18,12 @@ public class EncryptionFormController {
 
         if(text.trim().isEmpty()){
             new Alert(Alert.AlertType.ERROR,"Please input a valid Text", ButtonType.OK).show();
+            txtText.requestFocus();
             return;
         }
         if(key.trim().isEmpty()){
             new Alert(Alert.AlertType.ERROR,"Please input a valid Key", ButtonType.OK).show();
+            txtKey.requestFocus();
             return;
         }
         /**
