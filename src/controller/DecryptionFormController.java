@@ -22,6 +22,16 @@ public class DecryptionFormController {
             new Alert(Alert.AlertType.ERROR,"Please input a valid Key", ButtonType.OK).show();
             return;
         }
-
+        String text = "";
+        for (int i = 0; i < cipherText.length(); i++) {
+            int code = cipherText.charAt(i);
+            if(i%3==0){code -= 69;}
+            else if(i%3==1){code -= 194;}
+            else{code -= 227;}
+            char textChar = (char) code;
+            text += textChar;
+        }
+        text = text.substring(0,text.length()-key.length()-8); // length of "cinnamon" = 8
+        txtText.setText(text);
     }
 }

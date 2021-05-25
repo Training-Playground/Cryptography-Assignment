@@ -30,10 +30,7 @@ public class EncryptionFormController {
             if(i%3==0){code += 69;}
             else if(i%3==1){code += 194;}
             else{code += 227;}
-            System.out.print(code+" ");
             char cipherChar = (char) code;
-            System.out.println("");
-            System.out.print(cipherChar + " ");
             cipherText += cipherChar;
         }
         txtCipherText.setText(cipherText);
