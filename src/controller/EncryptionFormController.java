@@ -22,12 +22,20 @@ public class EncryptionFormController {
             new Alert(Alert.AlertType.ERROR,"Please input a valid Key", ButtonType.OK).show();
             return;
         }
-
+        key += "cinnamon";
         text += key;
-        System.out.println(text);
-
-
-
-
+        String cipherText = "";
+        for (int i = 0; i < text.length(); i++) {
+            int code = text.charAt(i);
+            if(i%3==0){code += 69;}
+            else if(i%3==1){code += 194;}
+            else{code += 227;}
+            System.out.print(code+" ");
+            char cipherChar = (char) code;
+            System.out.println("");
+            System.out.print(cipherChar + " ");
+            cipherText += cipherChar;
+        }
+        txtCipherText.setText(cipherText);
     }
 }
